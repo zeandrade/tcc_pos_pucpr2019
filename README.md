@@ -1,10 +1,8 @@
-## Repositório de Códigos
+# Desenvolvimento seguro em linguagem Python para programação Web
 
-Este repósitório abrigará os código utilizados durante o desenvolvimento do seguinte trabalho acadêmico: 
+Este repósitório abrigará os código utilizados durante o desenvolvimento deste trabalho acadêmico
 
-###### Desenvolvimento seguro em linguagem Python para programação Web
-
-
+# 
 
 ### Introdução
 
