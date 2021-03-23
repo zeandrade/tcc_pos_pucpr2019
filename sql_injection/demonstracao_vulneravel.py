@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+'''
+   Demonstração de vulnerabilidade em uma consulta hipotética
+'''
+
 connection = ""
 
 
