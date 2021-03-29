@@ -1,0 +1,9 @@
+{% if latest_registro_list %}
+    <ul>
+    {% for registro in latest_registro_list %}
+        <li><a href="{% url 'exemplo:registro' registro.id %}">{{ registro.registro_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhum registro encontrado.</p>
+{% endif %}
