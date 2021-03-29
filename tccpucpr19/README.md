@@ -1,3 +1,3 @@
 ### Aplicação exemplo em Django 
 
-* Atenção: * Possui trechos propositalmente vulneráveis 
+**Atenção:** Possui trechos propositalmente vulneráveis 
