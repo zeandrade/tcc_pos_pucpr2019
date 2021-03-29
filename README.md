@@ -19,4 +19,4 @@ Realizar estudo teórico de características da linguagem de programação Pytho
 
 ----
 
-Por **Gabrile Zamproni e José Ronberto Andrade Jr**
+Por **Gabrile Zamproni e José Roberto Andrade Jr**
