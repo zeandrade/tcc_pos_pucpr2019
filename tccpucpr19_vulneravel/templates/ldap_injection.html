@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col-5">
+        <form method="post" class="form">
+          <div class="form-group">
+            <label for="cp1">{{ tit }}</label>
+            <input type="text" name="param" class="form-control" id="cp1" placeholder="pesquisar...">
+            <br />
+            <input type="submit" value="Pesquisar" class="btn btn-info"/>
+          </div>
+        </form>
+    </div>
+    <div class="col-7">
+        <p>Resultados para {{ param }}:</p>
+        <br/>
+        <pre>{{ resultado }}</pre>
+    </div>
+
+</div>
+
+
+   
+{% endblock %}

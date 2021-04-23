@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang=”pt-br”>
+    <head>
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+        <link href="{{ url_for('static', filename='css/all.min.css') }}" rel="stylesheet" media="screen">
+
+
+        <title>TCC CyberSecurity PUCPR 1ºSem2019</title>
+    </head>
+    <body>
+        <br />
+<div class="container-fluid">   
+  <div class="row">
+    <div class="col-3">
+      <img src="{{ url_for('static', filename='images/logo_trabalho.svg') }}" width="100%" alt="">
+
+    </div>
+
+    <div class="col-9">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><i class="fas fa-home"></i> <a href="{{ url_for('index')}}">Home</a></li>
+          {%if vuln %}
+          <li class="breadcrumb-item active">{{vuln}}</li>
+          {%endif%}
+        </ol>
+    <h4> Demonstração de vulnerabilidade: <span class="text-danger">{{ vuln }}</span></h4>
+    {% block content %}{% endblock %}</div>
+  </div>
+
+</div>
+<div style="text-align:center;padding:0px auto;margin-bottom:1px; margin-top:20px;"><footer><small> TCC CyberSecurity PUCPR 1Sem2019 - Apresentado em 24 de abril de 2021</small></footer></div>
+    
+
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    </body>
+
+</html>

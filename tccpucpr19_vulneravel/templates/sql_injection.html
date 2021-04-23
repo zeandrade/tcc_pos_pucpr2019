@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+<br />
+<h5 class="">{{ tit }}</h5>
+<div class="row">
+    <div class="col-8">
+    {% if tarefas %}
+    <table class="table table-striped">
+    <caption><a href="{{ url_for('pre_sql_injection')}}"> lista de projetos</a></caption>
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Criado</th>
+          <th scope="col">Atualizado</th>
+          <th scope="col">Detalhes</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for tarefa in tarefas %}
+        <tr>
+          <th scope="row">{{ tarefa[0] }}</th>
+          <td>{{ tarefa[1] }}</td>
+          <td>{{ tarefa[5] }}</td>
+          <td>{{ tarefa[6] }}</td>
+          <td class="text-center"><a href="#"><i class="fas fa-info"></i></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <div class="alert alert-info"> Sem tarefas cadastradas </div>
+    {% endif %}
+
+    </div>
+
+</div>
+
+
+   
+{% endblock %}
