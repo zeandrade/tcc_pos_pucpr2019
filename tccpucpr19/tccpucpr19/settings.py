@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
 SECRET_KEY = '(b70*=jf2vcs^z70h2lnle(^tvoj6e4kfdy42v=o&)hyt9ckyh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -104,9 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -119,3 +120,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+from djbrut import Rule
+# DJBRUT
+BRUTEFORCE_TIMELIMIT = 1  # minute
+BRUTEFORCE_LIMITS = {
+    'login': Rule(
+        user=10,
+        ip=10,
+        csrf=10,
+        freq=10,
+    ),
+    'index': Rule(
+        user=0,
+        ip=5,
+        csrf=0,
+        freq=0,
+    ),
+}
