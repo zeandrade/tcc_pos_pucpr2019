@@ -34,3 +34,4 @@ Por fim, rode o aplicativo no modo "desenvolvimento":
 
 python manage.py runserver
 ```
+![Captura de tela](captura_tela.png)
