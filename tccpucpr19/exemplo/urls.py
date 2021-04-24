@@ -6,14 +6,11 @@ app_name = 'exemplo'
 urlpatterns = [
 
     path('', views.index, name='index'),
-    path('<int:registro_id>/', views.ver_registro, name='registro'),
-
-    path('<int:registro_id>/listar_atuacoes/',
-         views.listar_atuacoes, name='listar_atuacoes'),
-
-    path('atuacao/<int:atuacao_id>', views.ver_atuacao, name='atuacao'),
-    path('pesquisa/', views.pesquisa, name='pesquisa'),
-
-    # esta rota "vulneravel" deve ser a última, para funcionar como uma rota padrão
-    path('<parametro>/', views.vulneravel, name='vulneravel'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('restrito/', views.restrito, name='restrito'),
+    path('projetos/', views.pre_sql_safe, name='projetos'),
+    path('projeto/<int:registro_id>/', views.sql_safe, name='projeto'),
+    path('command-safe/', views.command_safe, name='command-safe'),
+    path('pesquisa-exemplo/', views.pesquisa_exemplo, name='pesquisa-exemplo'),
 ]
