@@ -28,6 +28,8 @@ Na sequência, ative o ambiente virtual e instale as dependências do projeto:
 source env_django/bin/activate
 pip install -r requirements.txt
 ```
+**OBs: É necessário um servidor REDIS disponível para a funcionalidade de contenção de ataques de força bruta**
+
 Por fim, rode o aplicativo no modo "desenvolvimento":
 
 ```bash
