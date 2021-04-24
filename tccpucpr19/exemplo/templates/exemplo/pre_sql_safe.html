@@ -1,0 +1,35 @@
+{% extends "exemplo/base.html" %}
+{% block content %}
+<br />
+<h5 class="">{{ tit }}</h5>
+<div class="row">
+    <div class="col-7">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Criado</th>
+          <th scope="col">Detalhes</th>
+          <th scope="col">Tarefas</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for registro in latest_registro_list %}
+        <tr>
+          <td scope="row">{{registro.id}} </td>
+          <td>{{registro.registro_text}}</td>
+          <td>{{registro.data_registro}}</td>
+          <td class="text-center"><a href="#" alt="ver"><i class="fas fa-wrench"></i><a></td>
+          <td class="text-center"><a href="{% url 'exemplo:projeto' registro.id %}" alt="ver"><i class="fas fa-tasks"></i><a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    </div>
+</div>
+
+
+   
+{% endblock %}

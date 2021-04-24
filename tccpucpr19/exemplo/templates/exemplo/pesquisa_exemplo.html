@@ -1,8 +1,9 @@
 {% extends "exemplo/base.html" %}
 {% block content %}
 <div class="row">
-    <div class="col-5">
+    <div class="col-6">
         <form method="post" class="form">
+        {% csrf_token %}
           <div class="form-group">
             <label for="cp1">{{ tit }}</label>
             <input type="text" name="param" class="form-control" id="cp1" placeholder="pesquisar...">
@@ -10,11 +11,13 @@
             <input type="submit" value="Pesquisar" class="btn btn-info"/>
           </div>
         </form>
+<script src="https://gist.github.com/zeandrade/13dc2a3cbc33e76fe2b493b82c069928.js"></script>
     </div>
-    <div class="col-7">
+    <div class="col-6">
         <p>Resultados para {{ param }}:</p>
         <br/>
         <pre>{{ resultado }}</pre>
+
     </div>
 
 </div>

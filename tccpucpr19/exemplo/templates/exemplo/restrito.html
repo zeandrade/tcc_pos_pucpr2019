@@ -1,0 +1,35 @@
+{% extends "exemplo/base.html" %}
+{% block content %}
+<br />
+<h5> Bem-vind(a|o), {{ user.get_username }}</h5>
+<br/>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#home">Dados sigilosos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#profile">Orçamentos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#dropdown1">Acesso financeiro</a>
+  </li>
+  <li class="nav-item ">
+     <a class="nav-link" href="{% url 'exemplo:logout' %}">Sair</a>
+  </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade show active" id="home">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mauris nunc, tristique sed nunc sed, sagittis eleifend mi. Etiam sed diam auctor, porta risus in, tincidunt sapien. Nulla nec elit vel odio bibendum vulputate at eu libero. Sed ac eleifend ipsum. Cras ornare nulla porta ante dignissim dapibus. Phasellus eget ante mi. Donec laoreet sit amet nulla ac bibendum. Quisque in mi vitae ante varius ultricies.  </p>
+  </div>
+  <div class="tab-pane fade" id="profile">
+    <p>Duis cursus sapien urna, vehicula ultrices nisi ornare vel. Pellentesque vitae tortor molestie, volutpat orci non, ultricies risus. Curabitur venenatis vehicula risus, vel efficitur dui accumsan ac. Pellentesque at dapibus augue. Donec at eleifend erat. Morbi vulputate nunc scelerisque, sagittis purus et, efficitur turpis. Cras et molestie nisi.</p>
+  </div>
+  <div class="tab-pane fade" id="dropdown1">
+    <p>Mauris sodales quis nisl tincidunt venenatis. Integer auctor eleifend nulla, eu sodales justo egestas id. Donec in egestas urna. Curabitur molestie id lorem eget porta. Etiam vestibulum mi nibh, at commodo felis laoreet non. Etiam tempus augue nisl, et tincidunt augue posuere sit amet. Ut eu sapien elementum, tincidunt diam nec, pellentesque lorem.  </p>
+  </div>
+
+</div>
+
+
+   
+{% endblock %}

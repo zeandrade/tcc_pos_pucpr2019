@@ -1,0 +1,33 @@
+{% extends "exemplo/base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-4">
+        <form method="post" class="form">
+          {% csrf_token %}
+          <label class="sr-only" for="cp1">usuario</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-user"></i></div>
+            </div>
+            <input type="text" name="username" class="form-control" id="cp1" placeholder="login">
+          </div>
+          <br/>
+          <label class="sr-only" for="cp2">login</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-key"></i></div>
+            </div>
+            <input type="password" name="password" class="form-control" id="cp2">
+          </div>
+          <br />
+          <input type="submit" value="Entrar" class="btn btn-info"/>
+        </form>
+    </div>
+     <div class="col-8">
+        <div class="text-center"><span {%if 'senha' in message %} class="alert alert-danger"{%endif%} >{{ message }}</span>
+        </div>
+        <script src="https://gist.github.com/zeandrade/458bced1c3652e47d72e10b579ddb65a.js"></script>
+     </div>
+</div>
+ 
+{% endblock %}

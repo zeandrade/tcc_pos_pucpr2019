@@ -1,9 +1,13 @@
-{% if latest_registro_list %}
-    <ul>
-    {% for registro in latest_registro_list %}
-        <li><a href="{% url 'exemplo:registro' registro.id %}">{{ registro.registro_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>Nenhum registro encontrado.</p>
-{% endif %}
+{% extends "exemplo/base.html" %}
+{% block content %}
+<div class="list-group">
+   <a href="{% url 'exemplo:projetos' %}" class="list-group-item list-group-item-action"><i class="fas fa-lock"></i> Sql Injection</a>
+   <a href="#" class="list-group-item list-group-item-action"><i class="fas fa-lock"></i> LDAP Injection</a>
+   <a href="{% url 'exemplo:command-safe' %}" class="list-group-item list-group-item-action"><i class="fas fa-lock"></i> Command Injection</a>
+   <a href="{% url 'exemplo:restrito' %}" class="list-group-item list-group-item-action"><i class="fas fa-lock"></i> Broken Authentication</a>
+   <a href="{% url 'exemplo:pesquisa-exemplo' %}" class="list-group-item list-group-item-action">
+<i class="fas fa-lock"></i> XSS</a>
+  {#  <a href="#" class="list-group-item list-group-item-action">Hash Killer</a> #}
+
+</div>
+{% endblock %}

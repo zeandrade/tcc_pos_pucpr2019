@@ -1,0 +1,42 @@
+{% extends "exemplo/base.html" %}
+{% block content %}
+<br />
+{% if registro %}
+<h5 class="">{{ tit }}:  <span class="alert alert-light">{{registro.registro_text}}</span></h5>
+<div class="row">
+    <div class="col-6">
+    <table class="table table-striped">
+    <caption><a href="{% url 'exemplo:projetos' %}"><i class="fas fa-hand-point-left"></i> lista de projetos</a> </caption>
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Data</th>
+          <th scope="col">Tempo</th>
+          <th scope="col">Detalhes</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for atuacao in registro.atuacao_set.all %}
+        <tr>
+          <th scope="row">{{atuacao.id}}</th>
+          <td>{{atuacao.atuacao_text}}</td>
+          <td>{{atuacao.data_historico}}</td>
+          <td>{{atuacao.minutos}} min</td>
+          <td class="text-center"><a href="#"><i class="fas fa-info"></i></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+    <div class="col-6"> 
+      <script src="https://gist.github.com/zeandrade/e7ccf6d82cda4558ecd8f30d809a3c14.js"></script>
+    </div>
+
+</div>
+ {% else %}
+    <div class="alert alert-info"> Sem tarefas cadastradas </div>
+    {% endif %}
+   
+{% endblock %}
