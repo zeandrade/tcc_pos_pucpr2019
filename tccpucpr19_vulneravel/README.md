@@ -30,7 +30,6 @@ Na sequência, ative o ambiente virtual e instale as dependências do projeto:
 source env_flask/bin/activate
 pip install -r requirements.txt
 ```
-**OBs: É necessário um servidor REDIS disponível para a funcionalidade de contenção de ataques de força bruta**
 Ajuste variáveis de ambiente, criando um arquivo **.env** no diretório do projeto:tcc\_pos\_pucpr2019/tccpucpr_vulneravel
 
 ```bash
