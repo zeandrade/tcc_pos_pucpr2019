@@ -1,11 +1,16 @@
 ## Desenvolvimento seguro em linguagem Python para programação Web
 _Gabriel Zamproni, José Roberto Andrade Jr_
+
 <small>Pontifícia Universidade Católica do Paraná(PUC-PR), Curitiba, PR – Brazil</small>
+
 <small> Abril de 2021</small>
 
 _**Abstract**_.
+
     This paper describes techniques and good practices to avoid the main cybersecurity problems and known flaws of web systems, taking as reference the indicators and reports of the main vulnerabilities of the OWASP (Open Web Application Security Project), and apply them to web programs developed in Python language. Through the studies carried out it was possible to demonstrate that the correct validation of the manipulated data, especially of the data inserted by the users in web interfaces, is a key condition to avoid an expressive part of the analyzed vulnerabilities. It was noticed that Python and its development frameworks are equipped with libraries and compiled to prevent the tested vulnerabilities from occurring.
+
 _**Resumo**_. 
+
     Este artigo descreve técnicas e boas práticas para evitar os principais problemas de cibersegurança e falhas conhecidas de sistemas web, tomando por referência os indicadores e relatórios de principais vulnerabilidades da OWASP (Open Web Application Security Project), e aplicá-las a programas web desenvolvidos em linguagem Python. Através dos estudos realizados foi possível demonstrar que a correta validação dos dados manipulados, em especial dos dados inseridos pelos usuários em interfaces web, é a condição chave para se evitar um parte expressiva das vulnerabilidades analisadas. Percebeu-se que o Python e seus frameworks de desenvolvimento são dotados de bibliotecas e funcionalidades adequadas para evitar a ocorrência das vulnerabilidades testadas.
 ​
 ### 1. Introdução
@@ -129,8 +134,10 @@ O relatório final de 2017 apresentou algumas mudanças quando comparado com o r
 
 Desse modo, as principais ameaças levantadas no último relatório são mostradas de forma decrescente (de A1 até A10) na Tabela 1.
 
-Tabela 1. OWASP Top Ten – 2017
+Tabela 3. OWASP Top Ten – 2017
+
 Posição | Vulnerabilidade
+------- | ---------------
 A1 | Injection
 A2 | Broken Authentication
 A3 | Sensitive Data Exposure
