@@ -52,75 +52,26 @@ Nativamente o Django possui mecanismos para autenticação de usuários presente
 
 A escolha do Django como framework preferencial para o desenvolvimento, e para a apresentação e demonstração de práticas de programação segura deu-se a partir de um breve comparativo entre cinco frameworks web em python, pré selecionados devido à expressividade junto a portais de desenvolvimento, presença de funcionalidades para um desenvolvimento completo de uma aplicação web e qualidade de documentação. Foram comparados: Django, Flask, Web2py, Pyramid e Tornado, considerando a presença de construção de sistemas web e de recursos para segurança da informação no próprio framework ou em módulos totalmente compatíveis. Assim, obtivemos os seguintes dados: 
 
-Tabela 1: características e módulos
-Framework
-Motor de exibição
-ORM para BD
-autenticação
-Última versão 
-Django
-próprio
-próprio
-próprio
-3.2.3 – maio/ 2021 
-Flask
-módulo
-módulo
-extensão
-2.0 – maio /2021
-Web2py
-próprio
-próprio
-Próprio, terceiros
-2.19.1 - março/2021
-Pyramid
-plugins e módulos
-plugins e módulo
-próprio
-2.0 – março /2021
-Tornado
-próprio
-plugin
-próprio, plugin
-61 - outubro/2020
+_Tabela 1: características e módulos_ 
 
-Tabela 2: tratamento de vulnerabilidades e recursos
-Framework
-CSRF
-XSS
-SQL Injection
-Brute Force
-Criptografia
-Django
-Possui nativo
-Possui nativo
-Evitado via (ORM)
-Via módulo djbrut
-Forte: argon2 e pbkdf2
-Flask
-Via extensão
-externo
-Externo (ORM)
-não
-externo
-Web2py
-Possui nativo
-parcial
-Evitado via ORM
-não
-Hmac + sha512
-Pyramid
-Possui nativo
-externo
-externo(ORM)
-não
-bcrypt
-Tornado
-possui
-parcial
-externo(ORM)
-não
-externo
+Framework | Motor de exibição | ORM para BD | Autenticação | Última versão 
+--------- | ----------------- | ----------- | ------------ | -------------
+Django | próprio | próprio | próprio | 3.2.3 – maio/ 2021 
+Flask | módulo | módulo | extensão | 2.0 – maio /2021
+Web2py | próprio | próprio | Próprio, terceiros | 2.19.1 - março/2021
+Pyramid | plugins e módulos | plugins e módulo | próprio | 2.0 – março /2021
+Tornado | próprio | plugin | próprio, plugin | 6.1 - outubro/2020
+
+_Tabela 2: tratamento de vulnerabilidades e recursos_ 
+
+Framework | CSRF | XSS | SQL Injection | Brute Force | Criptografia
+--------- | ---- | --- | ------------- | ----------- | ------------
+Django | Possui nativo | Possui nativo | Evitado via (ORM) | Via módulo djbrut | Forte: argon2 e pbkdf2
+Flask | Via extensão | externo | externo (ORM) | não | externo
+Web2py | Possui nativo | parcial | evitado via ORM | não | hmac + sha512
+Pyramid | Possui nativo | externo | externo(ORM) | não | bcrypt
+Tornado | possui | parcial | externo(ORM) | não | externo
+
 Para as demonstrações utilizando Django presentes neste artigo foi empregada a versão 3.1.7 do framework.
 ​
 ### 3. OWASP
