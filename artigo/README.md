@@ -1,9 +1,9 @@
 ## Desenvolvimento seguro em linguagem Python para programação Web
 _Gabriel Zamproni, José Roberto Andrade Jr_
 
-<small>Pontifícia Universidade Católica do Paraná(PUC-PR), Curitiba, PR – Brazil</small>
+Pontifícia Universidade Católica do Paraná(PUC-PR), Curitiba, PR – Brazil
 
-<small> Abril de 2021</small>
+Abril de 2021
 
 _**Abstract**_.
 
@@ -152,8 +152,8 @@ validar_admin(connection, "'; select true; --")
 ```
 Isto faz com que a instrução enviada ao banco seja traduzida em:
 
-```python
-"SELECT admin FROM usuarios WHERE usuario = ''; select true; --'"
+```sql
+SELECT admin FROM usuarios WHERE usuario = ''; select true; --'
 ```
 Assim, devido à vulnerabilidade, o resultado da consulta retornará sempre um valor booleano verdadeiro (True).
  
@@ -353,11 +353,17 @@ Por padrão o Django utiliza o algoritmo PBKDF2 com hashes SHA256,  recomendado 
 ​
 ### 7. XSS (Cross-Site Scripting)
 Segundo [PAULI 2014] XSS É uma das vulnerabilidades mais empregadas em plataformas web. Já [GROSMAN, HANSEN et al. 2007] destacam a presença deste tipo de vulnerabilidade desde meados de 1996 quando a Internet e os e-commerces começavam a se popularizar. Durante muitos anos figurou entre os 3 principais tipos de ataque web nas listas divulgadas pela OWASP. Na edição vigente, distribuída em 2017 percebe-se que sua incidência tem diminuído, provavelmente pela modernização dos frameworks de desenvolvimento e aprimoramento dos navegadores, visto que é uma vulnerabilidade explorada para execução de códigos Javascript no lado cliente.
+
 Como genericamente os navegadores possuem suporte ao Javascript, muito utilizado para enriquecer o potencial e a usabilidade das interfaces de aplicações web, uma falha no tratamento de informações que serão exibidas na interface do usuário pode causar um abuso por parte do atacante, que tentará inserir trechos de Javascript que serão interpretados pelo navegador. 
+
 Em um primeiro momento, a execução de Javascript no navegador pode parecer uma trivialidade e algo que independe de controles no lado servidor. Porém, existe um potencial danoso muitas vezes desconsiderado neste tipo de ataque. Mesmo que este ataque não seja executado no servidor, ele pode ser explorado para induzir o usuário a realizar ações indesejadas na aplicação, causar o vazamento de dados de controle de uma sessão autenticada permitindo seu sequestro, redirecionamento para páginas maliciosas etc. Conforme demonstra [WEIDMAN 2014], ataques XSS podem ser divididos em duas categorias: armazenados (stored) e refletidos (reflected). 
+
 Nos ataques de XSS armazenados, o atacante se valerá da possibilidade de armazenar o vetor de ataque, que pode ser um trecho de código Javascript ou uma referência a um arquivo de extensão ".js" armazenado em um domínio web externo, entre dados que serão recuperados e exibidos para um usuário que será a vítima. Já nos ataques refletidos, será necessário induzir o usuário a enviar uma solicitação com o trecho de código malicioso, assim é provável que a vítima do ataque seja ludibriada por um phishing ou outro tipo de componente de engenharia social.
+
 Os principais conjuntos de ferramentas de pentesting e scanners de vulnerabilidades possuem componentes eficientes para detectar pontos vulneráveis ao ataque XSS, favorecendo ferramentas especializadas em pentest do lado cliente (navegador) como o caso do BeEF (The Browser Exploitation Framework). 
+
 Novamente a validação e tratamento dos dados de entrada na requisição web, bem como o tratamento dos dados que serão exibidos na interface com o usuário são os pontos de atenção para inibir este tipo de vulnerabilidade ou mitigar um ataque XSS.
+
 Observa-se no trecho de código hipotético que tem por função realizar uma consulta e exibirá os resultados para um parâmetro informado: 
 ```python
 template_vulneravel= '''
