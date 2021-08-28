@@ -33,6 +33,8 @@ class BancoTeste:
         try:
             c = self.conn.cursor()
             c.execute(criar_tabela_sql)
+            self.conn.commit()
+            print(criar_tabela_sql)
         except Error as e:
             print(e)
 
@@ -114,7 +116,8 @@ class BancoTeste:
         self.criar_conexao()
         valor = None
         cursor = self.conn.cursor()
-        cursor.execute("SELECT passwd FROM usuarios WHERE usuario = '%s'" % usuario)
+        cursor.execute(
+            "SELECT passwd FROM usuarios WHERE usuario = '%s'" % usuario)
         valor = cursor.fetchone()
         return valor
 
@@ -156,15 +159,18 @@ class BancoTeste:
 
 if __name__ == '__main__':
     banco = BancoTeste()
+    if os.path.isfile(DATABASE):
+        os.remove(DATABASE)
     if not os.path.isfile(DATABASE):
         banco.criar_banco()
         banco.criar_conexao()
         # carga de exemplos
         usuarios = (
             ('admin', passwd_hash('Admin123'), True, '2021-04-22'),
-            ('teste', passwd_hash('TesteSistema'), True, '2021-04-22'),
+            ('teste', passwd_hash('teste'), True, '2021-04-22'),
             ('joao', passwd_hash('Brasil1970'), True, '2021-04-22'),
-            ('maria', passwd_hash('987654321'), True, '2021-04-22'),
+            ('estagiario', passwd_hash('987654321'), True, '2021-04-22'),
+            ('maria', passwd_hash('!VamosTrabalhar_2120_'), True, '2021-04-22'),
         )
         for usuario in usuarios:
             banco.criar_usuario(usuario)
@@ -206,7 +212,8 @@ if __name__ == '__main__':
         for tarefa in tarefas:
             banco.criar_tarefa(tarefa)
 
-        projeto = ('renovação do parque tecnológico', '2021-01-01', '2021-01-30')
+        projeto = ('renovação do parque tecnológico',
+                   '2021-01-01', '2021-01-30')
         projeto_id = banco.criar_projeto(projeto)
         tarefas = (
             ('Cotação de preços com fornecedores', 1,
