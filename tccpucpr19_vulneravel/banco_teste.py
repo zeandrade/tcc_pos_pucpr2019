@@ -34,7 +34,6 @@ class BancoTeste:
             c = self.conn.cursor()
             c.execute(criar_tabela_sql)
             self.conn.commit()
-            print(criar_tabela_sql)
         except Error as e:
             print(e)
 
